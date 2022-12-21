@@ -1,11 +1,17 @@
 from window import Window
-from tournament import Tournament, loadTeams
+from scene import LoadingScreen, MainMenu, Game
 import pygame
 
 window = Window("World Cup Simulator", (960, 720))
-t = Tournament(window, loadTeams())
+loadingScreen = LoadingScreen(window, name="World Cup Simulator [Loading Screen]")
+selectScreen = MainMenu(window, name="World Cup Simulator [Main Menu]")
+gameScreen = Game(window, name="World Cup Simulator [Game]")
+
+window.RegisterScene(loadingScreen)
+window.RegisterScene(selectScreen)
+window.RegisterScene(gameScreen)
+window.SetCurrentScene(0)
 
 while window.running:
     window.MainLoop()
-    t.Update()
     pygame.display.flip()

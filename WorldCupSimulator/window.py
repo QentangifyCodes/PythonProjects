@@ -1,5 +1,7 @@
 import pygame
+from scene import Scene
 pygame.font.init()
+
 # Window class. Handles some events and drawing entities. 
 class Window:
     def __init__(self, name:str="New Window", size:tuple=(700,700)):
@@ -11,22 +13,33 @@ class Window:
         self.clock = pygame.time.Clock()
         self.running = True
 
-        pygame.display.set_caption(self.name)
+        self.scenes = []
+        self.currentScene = None
 
+    def RegisterScene(self, s:Scene):
+        self.scenes.append(s)
+
+    def RemoveScene(self, s:Scene):
+        self.scenes.remove(s)
     
+    def SetCurrentScene(self, s:int):
+        self.currentScene = self.scenes[s]
+        
     def MainLoop(self):
+        pygame.display.set_caption(self.name)
         self.clock.tick(60)
         self.screen.fill(self.background_colour)
 
-        self.Text("World Cup 2024", (self.size.x/2, 40))
-
+        self.currentScene.Update()
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 self.running = False
 
-    def Text(self, msg:str, position:tuple, color:tuple=(255,255,255), size:int=50):
-        font = pygame.font.SysFont(None, size)
+    def Text(self, msg:str, position:tuple, color:tuple=(255,255,255), size:int=50, alpha:int=255):
+        font = pygame.font.Font("Assets/font/Font.ttf", size)
         text = font.render(msg, True, color)
+
+        text.set_alpha(alpha)
 
         rect = text.get_rect()
 

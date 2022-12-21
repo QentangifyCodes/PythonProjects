@@ -1,14 +1,6 @@
 import random, pygame
+from gameobject import Gameobject
 
-# loading all teams from a text file
-def loadTeams():
-    with open("Assets/teams.txt", "r") as f:
-        lines = f.readlines()
-
-    teams = []
-    for line in lines:
-        teams.append(line.strip())
-    return teams
 
 # Class that handles each match
 class Match:
@@ -92,31 +84,25 @@ class Match:
             self.completed = True
 
 # Simulating entire thing
-class Tournament:
-    def __init__(self, window, teams:list):
+class Tournament(Gameobject):
+    def __init__(self, window):
         self.window = window
-        self.teams = []
         self.round = 1
         self.current = 0
         self.size = (75, 50)
 
-        # Generating teams that qualified
-        count = 0
-
-        for i in range(len(teams)):
-            if 70>(i*random.uniform(0, 1)):
-                self.teams.append(teams[i])
-                count+=1
-
-            
-            if count==16:
-                break
         
         self.matches = []
         self.oldMatches = []
 
-        # Creating round of 16
-        matches = self.teams
+        self.generated = False
+
+    def GenerateMatches(self, teams):
+
+        if self.generated:
+            return
+
+        matches = teams
 
         x = 10+self.size[0]+(100*(self.round-1))
         y = (self.window.size.y-(self.size[1]+20)*8/self.round)/2+20
@@ -130,6 +116,7 @@ class Tournament:
             self.matches.append(Match(self.window, team1, team2, (x, y), self.size))
             y+=self.size[1]+20
 
+        self.generated = True
 
     def nextBracket(self):
         self.round+=1   
