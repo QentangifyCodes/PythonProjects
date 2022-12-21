@@ -1,4 +1,4 @@
-orgwords = ["phenomenon", "pseudonym", "philanthropy", "precede", "voluminous", "query", "requisite", "surmise", "simulate", "synonymous"]
+orgwords = ["abhor", "balmy", "conspire", "antidote", "foreboding", "brusque", "contemplate", "daunt", "fastidious", "dissension"]
 words = orgwords
 attempts = 0
 import os

@@ -1,0 +1,211 @@
+Brazil
+Belgium
+Argentina
+France
+England
+Italy
+Spain
+Netherlands
+Portugal
+Denmark
+Germany
+Croatia
+Mexico
+Uruguay
+Switzerland
+USA
+Colombia
+Senegal
+Wales
+Iran
+Serbia
+Morocco
+Peru
+Japan
+Sweden
+Poland
+Ukraine
+Korea
+Chile
+Tunisia
+Costa Rica
+Nigeria
+Russia
+Austria
+Czech Republic
+Hungary
+Algeria
+Australia
+Egypt
+Scotland
+Canada
+Norway
+Cameroon
+Ecuador
+Turkey
+Mali
+Paraguay
+Côte d'Ivoire
+Republic of Ireland
+Qatar
+Saudi Arabia
+Greece
+Romania
+Burkina Faso
+Slovakia
+Finland
+Venezuela
+Bosnia-Herzegovina
+Northern Ireland
+Panama
+Ghana
+Iceland
+Slovenia
+Jamaica
+North Macedonia
+Albania
+South Africa
+Iraq
+Montenegro
+UAE
+Cabo Verde
+Bulgaria
+Congo DR
+El Salvador
+Oman
+Israel
+Uzbekistan
+Georgia
+China PR
+Honduras
+Gabon
+Bolivia
+Guinea
+Jordan
+Bahrain
+Curaçao
+Haiti
+Zambia
+Uganda
+Syria
+Benin
+Luxembourg
+Armenia
+Palestine
+Kyrgyz Republic
+Vietnam
+Belarus
+Equatorial Guinea
+Lebanon
+Congo
+Kenya
+Madagascar
+Mauritania
+Trinidad and Tobago
+New Zealand
+India
+Kosovo
+Tajikistan
+Estonia
+Cyprus
+Thailand
+Korea DPR
+Kazakhstan
+Mozambique
+Namibia
+Guinea-Bissau
+Sierra Leone
+Guatemala
+Angola
+Libya
+Niger
+Faroe Islands
+Azerbaijan
+Malawi
+Zimbabwe
+Gambia
+Togo
+Sudan
+Comoros
+Tanzania
+Antigua and Barbuda
+Central African Republic
+Philippines
+Latvia
+Turkmenistan
+Solomon Islands
+Rwanda
+Ethiopia
+Suriname
+St. Kitts and Nevis
+Burundi
+Nicaragua
+Eswatini
+Lithuania
+Hong Kong
+Malaysia
+Lesotho
+Botswana
+Kuwait
+Liberia
+Andorra
+Indonesia
+Dominican Republic
+Maldives
+Yemen
+Afghanistan
+Chinese Taipei
+Myanmar
+Papua New Guinea
+Singapore
+New Caledonia
+Tahiti
+Fiji
+Vanuatu
+South Sudan
+Barbados
+Cuba
+Malta
+Bermuda
+Puerto Rico
+Guyana
+St. Lucia
+Grenada
+Moldova
+Nepal
+Belize
+Cambodia
+St. Vincent / Grenadines
+Montserrat
+Mauritius
+Chad
+Macau
+Mongolia
+Dominica
+Bhutan
+São Tomé e Príncipe
+Laos
+American Samoa
+Cook Islands
+Brunei
+Samoa
+Bangladesh
+Djibouti
+Pakistan
+Cayman Islands
+Liechtenstein
+Tonga
+Timor-Leste
+Seychelles
+Eritrea
+Aruba
+Bahamas
+Somalia
+Gibraltar
+Guam
+Turks and Caicos Islands
+Sri Lanka
+US Virgin Islands
+British Virgin Islands
+Anguilla
+San Marino
