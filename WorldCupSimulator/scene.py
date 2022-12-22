@@ -1,5 +1,4 @@
-from gameobject import *
-from rain import RainBackground
+from ui import *
 from tournament import *
 import sys
 
@@ -8,6 +7,7 @@ class Scene:
         self.window = window
         self.gameobjects = []
         self.window.background_colour = bg
+        self.name = name
         self.window.name = name
 
         self.nextScene = nextScene
@@ -50,15 +50,15 @@ class Scene:
         for object in self.gameobjects:
             if t == type(object):
                 objects.append(object)
-        
-        return objects[index]
+                return objects[index]
 
     def Update(self):
-        for gameobject in self.gameobjects:
-            gameobject.Update()
-        
         if not self.fadedIn:
             self.FadeIn()
+            return
+
+        for gameobject in self.gameobjects:
+            gameobject.Update()
             
         if self.fadeOut:
             self.FadeOut()
@@ -73,6 +73,8 @@ class LoadingScreen(Scene):
 
     def Update(self):
         super().Update()
+
+teams = []
 
 class MainMenu(Scene):
     def __init__(self, window, bg: tuple = (23, 23, 23), name: str = None):
@@ -94,18 +96,34 @@ class MainMenu(Scene):
         self.AddObject(Text(self, "World Cup Simulator", (self.window.size.x/2, 80), size=70))
         self.AddObject(RainBackground(self, 200))
         self.AddObject(ListUi(self, "Qualified Teams", (self.window.size.x-275, 160)))
+    
+    def Update(self):
+        global teams
+        teams = self.GetObject(ListUi).items
+        return super().Update()
+
 
 class Game(Scene):
-    def __init__(self, window, bg: tuple = (23, 23, 23), name: str = None):
-        super().__init__(window, bg, name)
+    def __init__(self, window, bg: tuple = (23, 23, 23), name: str = None, nextScene: int = 1):
+        global teams
+        super().__init__(window, bg, name, nextScene)
 
-        def restart(gameobject):
-            self.window.SetCurrentScene(1)
-            self.window.currentScene.__init__(self.window, name="World Cup Simulator [Main Menu]")
-
-        self.AddObject(Tournament(self.window))
-        self.AddObject(Button(self, (self.window.size.x/2, 20), restart, "restart", size=(104, 40.5)))
-
+        self.AddObject(Match(self))
+        self.AddObject(Tournament(self, teams))
+    
     def Update(self):
-        self.GetObject(Tournament).GenerateMatches(self.window.scenes[1].GetObject(ListUi).items)
-        super().Update()
+        if self.GetObject(Tournament).show:
+            self.GetObject(Tournament).Update()
+            self.GetObject(Match).setup = False
+        else:
+            fix = self.GetObject(Tournament).CurrentFixture()
+
+            self.GetObject(Match).Setup(fix[0], fix[1])
+
+            self.GetObject(Match).Update()
+
+            if self.GetObject(Match).done:
+                self.GetObject(Tournament).show = True
+                self.GetObject(Tournament).getWinner(self.GetObject(Match).winner)
+                self.GetObject(Tournament).nextMatch()
+

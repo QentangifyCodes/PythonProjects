@@ -32,7 +32,7 @@ Costa Rica
 Nigeria
 Russia
 Austria
-Czech Republic
+Czech 
 Hungary
 Algeria
 Australia
@@ -46,7 +46,7 @@ Turkey
 Mali
 Paraguay
 Côte d'Ivoire
-Republic of Ireland
+Ireland
 Qatar
 Saudi Arabia
 Greece
@@ -92,7 +92,7 @@ Benin
 Luxembourg
 Armenia
 Palestine
-Kyrgyz Republic
+Kyrgyz 
 Vietnam
 Belarus
 Equatorial Guinea
@@ -129,7 +129,7 @@ Sudan
 Comoros
 Tanzania
 Antigua and Barbuda
-Central African Republic
+Central African 
 Philippines
 Latvia
 Turkmenistan

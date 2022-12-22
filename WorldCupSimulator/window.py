@@ -24,7 +24,7 @@ class Window:
     
     def SetCurrentScene(self, s:int):
         self.currentScene = self.scenes[s]
-        
+        self.currentScene.__init__(self, name=self.currentScene.name)
     def MainLoop(self):
         pygame.display.set_caption(self.name)
         self.clock.tick(60)
